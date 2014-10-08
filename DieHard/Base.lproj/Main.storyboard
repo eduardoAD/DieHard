@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,65 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXx-an-6Qo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Roll Die">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRollButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="imq-CP-Rpj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-zQ-APY">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="KXx-an-6Qo" secondAttribute="centerX" id="IIM-mZ-DV9"/>
+                            <constraint firstAttribute="centerX" secondItem="b3Y-zQ-APY" secondAttribute="centerX" id="jQO-cq-Trt"/>
+                            <constraint firstItem="b3Y-zQ-APY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="38" id="jVC-aN-XPA"/>
+                            <constraint firstItem="b3Y-zQ-APY" firstAttribute="width" secondItem="KXx-an-6Qo" secondAttribute="width" id="uMl-Yb-AsE"/>
+                            <constraint firstItem="KXx-an-6Qo" firstAttribute="top" secondItem="b3Y-zQ-APY" secondAttribute="bottom" constant="30" id="umw-Pc-5Q7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KXx-an-6Qo"/>
+                                <exclude reference="b3Y-zQ-APY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="jQO-cq-Trt"/>
+                                <exclude reference="jVC-aN-XPA"/>
+                                <exclude reference="uMl-Yb-AsE"/>
+                                <exclude reference="IIM-mZ-DV9"/>
+                                <exclude reference="umw-Pc-5Q7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KXx-an-6Qo"/>
+                                <include reference="b3Y-zQ-APY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="jQO-cq-Trt"/>
+                                <include reference="jVC-aN-XPA"/>
+                                <include reference="uMl-Yb-AsE"/>
+                                <include reference="IIM-mZ-DV9"/>
+                                <include reference="umw-Pc-5Q7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dieLabel" destination="b3Y-zQ-APY" id="siQ-gS-WSy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="380"/>
         </scene>
     </scenes>
 </document>
